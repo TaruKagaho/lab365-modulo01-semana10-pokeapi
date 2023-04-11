@@ -1,0 +1,9 @@
+.card {
+    background-color: #ccc;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}

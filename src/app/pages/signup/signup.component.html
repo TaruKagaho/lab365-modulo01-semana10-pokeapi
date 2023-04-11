@@ -1,0 +1,69 @@
+<main>
+    <form
+        #form="ngForm"
+        (ngSubmit)="onSubmit($event)"
+        class="p-4 bg-secondary rounded-3"
+    >
+        <div class="form-floating mb-3">
+            <input
+                type="text"
+                class="form-control"
+                id="floatingName"
+                name="name"
+                placeholder="Digite seu nome"
+                [(ngModel)]="formSignUp.name"
+                #name="ngModel"
+                required
+            />
+
+            <label for="floatingName"> Nome do usuário </label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input
+                type="email"
+                class="form-control"
+                id="floatingEmail"
+                name="email"
+                placeholder="Digite seu e-mail"
+                [(ngModel)]="formSignUp.email"
+                #email="ngModel"
+                required
+            />
+
+            <label for="floatingCpf"> E-mail </label>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="form-floating">
+                <input
+                    type="{{ showPassword ? 'text' : 'password' }}"
+                    class="form-control"
+                    id="floatingPassword"
+                    name="password"
+                    placeholder="Digite a senha"
+                    [(ngModel)]="formSignUp.password"
+                    #password="ngModel"
+                    required
+                />
+
+                <label for="floatingPassword"> Senha </label>
+            </div>
+
+            <span class="input-group-text" (click)="togglePassword()">
+                <i
+                    class="bi {{
+                        showPassword ? 'bi-eye-slash-fill' : 'bi-eye-fill'
+                    }}"
+                ></i>
+            </span>
+        </div>
+
+        <button
+            type="submit"
+            class="btn btn-primary mt-3"
+        >
+            Cadastrar
+        </button>
+    </form>
+</main>
